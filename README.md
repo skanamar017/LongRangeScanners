@@ -1,4 +1,4 @@
-# LongRangeScanners
+# Long Range Scanners
 
 **Programming Fundamentals Assessment Preparation**
 
