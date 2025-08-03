@@ -64,7 +64,10 @@ class MapDictionaryExercises:
         Returns:
             The value for the key, or default value
         """
-        raise NotImplementedError("Implement get_value_or_default")
+        if key in dictionary:
+            return dictionary[key]
+        else:
+            return default_value
     
     def count_character_frequency(self, text: str) -> Dict[str, int]:
         """
@@ -81,7 +84,16 @@ class MapDictionaryExercises:
         Returns:
             Dictionary of character frequencies
         """
-        raise NotImplementedError("Implement count_character_frequency")
+        if text=="":
+            return {}
+        list_text=list(text)
+        new_dict={}
+        for letter in list_text:
+            if letter not in new_dict:
+                new_dict[letter]=1
+            else:
+                new_dict+=1
+        return new_dict
     
     def find_most_frequent(self, items: List[int]) -> int:
         """
@@ -133,7 +145,12 @@ class MapDictionaryExercises:
         Returns:
             Merged dictionary with summed values
         """
-        raise NotImplementedError("Implement merge_dicts")
+        for key in dict2.keys():
+            if key in dict1.keys():
+                dict1[key]+=dict2[key]
+            else:
+                dict1[key]=dict2[key]
+        return dict1
     
     def find_common_keys(self, dict1: Dict[str, int], dict2: Dict[str, int]) -> List[str]:
         """
@@ -151,7 +168,13 @@ class MapDictionaryExercises:
         Returns:
             List of common keys
         """
-        raise NotImplementedError("Implement find_common_keys")
+        out_lst=[]
+        for key in dict2.keys():
+            if key in dict1.keys():
+                dict1[key]+=dict2[key]
+            else:
+                dict1[key]=dict2[key]
+        return dict1
     
     def invert_dict(self, dictionary: Dict[str, int]) -> Dict[int, str]:
         """
@@ -188,7 +211,11 @@ class MapDictionaryExercises:
         Returns:
             Filtered dictionary
         """
-        raise NotImplementedError("Implement filter_by_value")
+        new_dict={}
+        for key, value in dictionary:
+            if dictionary[key]>threshold:
+                new_dict[key]=value
+        return new_dict
     
     def word_frequency(self, text: str) -> Dict[str, int]:
         """
@@ -206,7 +233,15 @@ class MapDictionaryExercises:
         Returns:
             Dictionary of word frequencies
         """
-        raise NotImplementedError("Implement word_frequency")
+        if text=="":
+            return {}
+        new_dict={}
+        for word in text.split(' '):
+            if word.lower() not in new_dict:
+                new_dict[word]=1
+            else:
+                new_dict[word]+=1
+        return new_dict
     
     def dict_comprehension_example(self, items: List[int]) -> Dict[int, int]:
         """
@@ -223,7 +258,7 @@ class MapDictionaryExercises:
         Returns:
             Dictionary mapping numbers to their squares
         """
-        raise NotImplementedError("Implement dict_comprehension_example")
+        return {x: x**2 for x in items}
     
     def find_max_value_key(self, dictionary: Dict[str, int]) -> Optional[str]:
         """
@@ -241,6 +276,7 @@ class MapDictionaryExercises:
             Key with maximum value, or None if dictionary is empty
         """
         raise NotImplementedError("Implement find_max_value_key")
+        
     
     def dicts_equal(self, dict1: Dict[str, int], dict2: Dict[str, int]) -> bool:
         """
@@ -258,7 +294,10 @@ class MapDictionaryExercises:
         Returns:
             True if dictionaries have same key-value pairs
         """
-        raise NotImplementedError("Implement dicts_equal")
+        for key in dict1.keys():
+            if dict1[key]!=dict2[key]:
+                return False
+        return True
     
     def create_frequency_dict(self, items: List[int]) -> Dict[int, int]:
         """
@@ -275,7 +314,15 @@ class MapDictionaryExercises:
         Returns:
             Dictionary of element frequencies
         """
-        raise NotImplementedError("Implement create_frequency_dict")
+        if items==[]:
+            return {}
+        new_dict={}
+        for el in items:
+            if el not in new_dict:
+                new_dict[el]=1
+            else:
+                new_dict[el]+=1
+        return new_dict
     
     def get_sorted_keys(self, dictionary: Dict[str, int]) -> List[str]:
         """
@@ -312,7 +359,7 @@ class MapDictionaryExercises:
         Returns:
             Dictionary mapping first characters to indices
         """
-        raise NotImplementedError("Implement defaultdict_example")
+        pass
     
     def counter_example(self, text: str) -> Dict[str, int]:
         """
@@ -329,7 +376,11 @@ class MapDictionaryExercises:
         Returns:
             Dictionary of character frequencies using Counter
         """
-        raise NotImplementedError("Implement counter_example")
+        x=Counter(text)
+        new_dict={}
+        for i in x.keys():
+            new_dict[i]=x[i]
+        return new_dict
     
     def nested_dict_access(self, nested: Dict[str, Dict[str, int]], path: List[str]) -> Optional[int]:
         """

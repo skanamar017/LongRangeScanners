@@ -203,13 +203,7 @@ class ListArrayExercises:
         Returns:
             New rotated list
         """
-        i=0
-        while i<k:
-            temp=list(lst[-1])
-            lst=lst[:-1]
-            lst=temp+lst
-            i+=1
-        return temp
+        pass
     
     def max_subarray_sum(self, lst: List[int]) -> int:
         """
