@@ -24,7 +24,8 @@ class VariableExercises:
             int: The integer value 42
         """
         # TODO: Implement this method
-        raise NotImplementedError("Method not implemented yet")
+        int_var=42
+        return int_var
 
     def initialize_float(self) -> float:
         """
@@ -34,7 +35,9 @@ class VariableExercises:
             float: The float value 3.14159
         """
         # TODO: Implement this method
-        raise NotImplementedError("Method not implemented yet")
+        float_var=3.14159
+        return float_var
+
 
     def initialize_boolean(self) -> bool:
         """
@@ -44,7 +47,8 @@ class VariableExercises:
             bool: The boolean value True
         """
         # TODO: Implement this method
-        raise NotImplementedError("Method not implemented yet")
+        bool_var=True
+        return bool_var
 
     def initialize_string(self) -> str:
         """
@@ -54,7 +58,8 @@ class VariableExercises:
             str: The string value "Hello, World!"
         """
         # TODO: Implement this method
-        raise NotImplementedError("Method not implemented yet")
+        str_var="Hello, World!"
+        return str_var
 
     def initialize_list(self) -> list:
         """
@@ -64,7 +69,8 @@ class VariableExercises:
             list: A list containing [1, 2, 3, 4, 5]
         """
         # TODO: Implement this method
-        raise NotImplementedError("Method not implemented yet")
+        list_var=[1, 2, 3, 4, 5]
+        return list_var
 
     def variable_reassignment(self) -> int:
         """
@@ -75,11 +81,11 @@ class VariableExercises:
             int: The final calculated value (should be 30)
         """
         # TODO: Implement this method
-        # value = 10
-        # value += 5  # or value = value + 5
-        # value *= 2  # or value = value * 2
-        # return value
-        raise NotImplementedError("Method not implemented yet")
+        value = 10
+        value += 5  # or value = value + 5
+        value *= 2  # or value = value * 2
+        return value
+        
 
     def work_with_constants(self) -> int:
         """
@@ -91,9 +97,9 @@ class VariableExercises:
             int: The constant value 100
         """
         # TODO: Implement this method
-        # CONSTANT_VALUE = 100
-        # return CONSTANT_VALUE
-        raise NotImplementedError("Method not implemented yet")
+        CONSTANT_VALUE = 100
+        return CONSTANT_VALUE
+        
 
     def type_conversion(self) -> int:
         """
@@ -104,9 +110,8 @@ class VariableExercises:
             int: The integer value 9
         """
         # TODO: Implement this method
-        # original_value = 9.99
-        # return int(original_value)
-        raise NotImplementedError("Method not implemented yet")
+        original_value = 9.99
+        return int(original_value)
 
     def multiple_assignment(self) -> tuple:
         """
@@ -117,9 +122,8 @@ class VariableExercises:
             tuple: A tuple containing (1, 2, 3)
         """
         # TODO: Implement this method
-        # a, b, c = 1, 2, 3
-        # return (a, b, c)
-        raise NotImplementedError("Method not implemented yet")
+        a, b, c = 1, 2, 3
+        return (a, b, c)
 
     def dynamic_typing(self) -> tuple:
         """
@@ -131,9 +135,8 @@ class VariableExercises:
             tuple: A tuple containing (42, "Hello")
         """
         # TODO: Implement this method
-        # variable = 42
-        # first_value = variable
-        # variable = "Hello"
-        # second_value = variable
-        # return (first_value, second_value)
-        raise NotImplementedError("Method not implemented yet")
+        variable = 42
+        first_value = variable
+        variable = "Hello"
+        second_value = variable
+        return (first_value, second_value)

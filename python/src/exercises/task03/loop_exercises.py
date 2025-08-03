@@ -34,7 +34,10 @@ class LoopExercises:
             int: The sum of numbers from 1 to n
         """
         # TODO: Implement this method using a for loop with range()
-        raise NotImplementedError("Method not implemented yet")
+        total=0
+        for i in range(1, n+1):
+            total+=i
+        return total
 
     def count_divisions(self, n: int) -> int:
         """
@@ -48,7 +51,11 @@ class LoopExercises:
             int: The number of divisions performed
         """
         # TODO: Implement this method using a while loop
-        raise NotImplementedError("Method not implemented yet")
+        count=0
+        while n>=2:
+            n/=2
+            count+=1
+        return count
 
     def repeat_character(self, character: str, target_length: int) -> str:
         """
@@ -64,7 +71,12 @@ class LoopExercises:
             str: A string with the character repeated
         """
         # TODO: Implement this method using a while loop (not character * target_length)
-        raise NotImplementedError("Method not implemented yet")
+        i=1
+        string=character
+        while i<target_length:
+            string+=character
+            i+=1
+        return string
 
     def find_maximum(self, numbers: List[int]) -> int:
         """
@@ -79,7 +91,13 @@ class LoopExercises:
             int: The maximum value in the list
         """
         # TODO: Implement this method using a for loop over the list
-        raise NotImplementedError("Method not implemented yet")
+        if len(numbers)==0:
+            return float('-inf')
+        max=numbers[0]
+        for num in numbers:
+            if num>max:
+                max=num
+        return max
 
     def create_multiplication_table(self, size: int) -> List[List[int]]:
         """
@@ -94,7 +112,13 @@ class LoopExercises:
             List[List[int]]: A 2D list representing the multiplication table
         """
         # TODO: Implement this method using nested for loops
-        raise NotImplementedError("Method not implemented yet")
+        table=[]
+        for i in range(1, size+1):
+            row=[]
+            for j in range(1, size+1):
+                row.append(i*j)
+            table.append(row)
+        return table
 
     def find_first_divisible(self, numbers: List[int], divisor: int) -> int:
         """
@@ -110,7 +134,10 @@ class LoopExercises:
             int: The first number divisible by divisor, or -1 if none found
         """
         # TODO: Implement this method using a loop with early return
-        raise NotImplementedError("Method not implemented yet")
+        for num in numbers:
+            if num%divisor==0:
+                return num
+        return -1
 
     def count_even_numbers(self, numbers: List[int]) -> int:
         """
@@ -124,7 +151,11 @@ class LoopExercises:
             int: Count of even numbers
         """
         # TODO: Implement this method using a loop with conditional counting
-        raise NotImplementedError("Method not implemented yet")
+        count=0
+        for num in numbers:
+            if num%2==0:
+                count+=1
+        return count
 
     def generate_fibonacci(self, n: int) -> List[int]:
         """
@@ -139,7 +170,16 @@ class LoopExercises:
             List[int]: List containing the Fibonacci sequence
         """
         # TODO: Implement this method using loops
-        raise NotImplementedError("Method not implemented yet")
+        if n==0:
+            return []
+        elif n==1:
+            return [0]
+        elif n==2:
+            return [0, 1]
+        fib_arr=[0, 1]
+        for i in range(2, n):
+            fib_arr.append(fib_arr[i-2]+fib_arr[i-1])   
+        return fib_arr     
 
     def count_vowels(self, text: str) -> int:
         """
@@ -154,7 +194,13 @@ class LoopExercises:
             int: Number of vowels found
         """
         # TODO: Implement this method using a loop
-        raise NotImplementedError("Method not implemented yet")
+        count=0
+        if len(text)==0:
+            return 0
+        for letter in text:
+            if letter in "AEIOUaeiou":
+                count+=1
+        return count
 
     def is_prime(self, number: int) -> bool:
         """
@@ -171,7 +217,15 @@ class LoopExercises:
         # TODO: Implement this method using loops
         # Hint: Check divisibility from 2 to sqrt(number)
         # Use range(2, int(number**0.5) + 1)
-        raise NotImplementedError("Method not implemented yet")
+        if number==1:
+            return False
+        if number==2:
+            return True
+        for i in range(2, int(number**0.5) + 1):
+            if number%i==0:
+                return False
+        return True
+
 
     def generate_triangle_pattern(self, height: int) -> str:
         """
@@ -190,7 +244,11 @@ class LoopExercises:
             str: A string representing the triangle pattern
         """
         # TODO: Implement this method using nested loops
-        raise NotImplementedError("Method not implemented yet")
+        triangle=""
+        for i in range(1, height+1):
+            triangle+=("*"*i)+"\n"
+        return triangle
+
 
     def reverse_list(self, lst: List[int]) -> List[int]:
         """
@@ -204,7 +262,10 @@ class LoopExercises:
             List[int]: A new list with elements in reverse order
         """
         # TODO: Implement this method using loops (not lst[::-1] or reversed())
-        raise NotImplementedError("Method not implemented yet")
+        out_list=[]
+        for element in lst:
+            out_list=[element]+out_list
+        return out_list
 
     def enumerate_elements(self, items: List[str]) -> List[str]:
         """
@@ -218,7 +279,11 @@ class LoopExercises:
             List[str]: List of formatted strings
         """
         # TODO: Implement this method using enumerate() in a loop
-        raise NotImplementedError("Method not implemented yet")
+        out_lst=[]
+        for i, item in enumerate(items):
+            out_lst.append(f"{i}: {item}")
+        return out_lst
+
 
     def zip_lists(self, list1: List[int], list2: List[int]) -> List[int]:
         """
@@ -234,7 +299,12 @@ class LoopExercises:
             List[int]: List of sums of corresponding elements
         """
         # TODO: Implement this method using zip() in a loop
-        raise NotImplementedError("Method not implemented yet")
+        out_lst=[]
+        for el1, el2 in zip(list1, list2):
+            out_lst.append(el1+el2)
+        return out_lst
+        
+
 
     def list_comprehension_squares(self, numbers: List[int]) -> List[int]:
         """
@@ -249,7 +319,7 @@ class LoopExercises:
         """
         # TODO: Implement this method using list comprehension
         # Should be equivalent to: [x**2 for x in numbers if x % 2 == 0]
-        raise NotImplementedError("Method not implemented yet")
+        return [num**2 for num in numbers if num%2==0]
 
     def nested_loop_coordinates(self, width: int, height: int) -> List[tuple]:
         """
@@ -264,4 +334,8 @@ class LoopExercises:
             List[tuple]: List of (x, y) coordinate tuples
         """
         # TODO: Implement this method using nested for loops
-        raise NotImplementedError("Method not implemented yet")
+        out_lst=[]
+        for x in range(width):
+            for y in range(height):
+                out_lst.append((x, y))
+        return out_lst

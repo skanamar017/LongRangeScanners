@@ -41,7 +41,10 @@ class ListArrayExercises:
         Returns:
             List of integers from 1 to n
         """
-        raise NotImplementedError("Implement create_number_list")
+        out_lst=[]
+        for i in range(1, n+1):
+            out_lst.append(i)
+        return out_lst
     
     def double_list_elements(self, lst: List[int]) -> List[int]:
         """
@@ -58,7 +61,10 @@ class ListArrayExercises:
         Returns:
             New list with doubled values
         """
-        raise NotImplementedError("Implement double_list_elements")
+        out_lst=[]
+        for el in lst:
+            out_lst.append(el*2)
+        return out_lst
     
     def find_element(self, lst: List[int], target: int) -> int:
         """
@@ -78,7 +84,10 @@ class ListArrayExercises:
         Returns:
             Index of first occurrence, or -1 if not found
         """
-        raise NotImplementedError("Implement find_element")
+        for i in range(len(lst)):
+            if target==lst[i]:
+                return i
+        return -1
     
     def calculate_average(self, lst: List[int]) -> float:
         """
@@ -97,7 +106,10 @@ class ListArrayExercises:
         Returns:
             Average value, or 0.0 for empty list
         """
-        raise NotImplementedError("Implement calculate_average")
+        if len(lst)==0:
+            return 0.0
+        else:
+            return sum(lst)/len(lst)
     
     def filter_even_numbers(self, lst: List[int]) -> List[int]:
         """
@@ -114,7 +126,11 @@ class ListArrayExercises:
         Returns:
             New list with only even numbers
         """
-        raise NotImplementedError("Implement filter_even_numbers")
+        new_lst=[]
+        for el in lst:
+            if el%2==0:
+                new_lst.append(el)
+        return new_lst
     
     def remove_value(self, lst: List[int], value: int) -> List[int]:
         """
@@ -132,7 +148,7 @@ class ListArrayExercises:
         Returns:
             New list without the specified value
         """
-        raise NotImplementedError("Implement remove_value")
+        return [i for i in lst if i!=value]
     
     def sort_list(self, lst: List[int]) -> List[int]:
         """
@@ -149,7 +165,7 @@ class ListArrayExercises:
         Returns:
             New sorted list
         """
-        raise NotImplementedError("Implement sort_list")
+        return lst.sort()
     
     def merge_sorted_lists(self, list1: List[int], list2: List[int]) -> List[int]:
         """
@@ -187,7 +203,13 @@ class ListArrayExercises:
         Returns:
             New rotated list
         """
-        raise NotImplementedError("Implement rotate_list")
+        i=0
+        while i<k:
+            temp=list(lst[-1])
+            lst=lst[:-1]
+            lst=temp+lst
+            i+=1
+        return temp
     
     def max_subarray_sum(self, lst: List[int]) -> int:
         """
@@ -245,7 +267,7 @@ class ListArrayExercises:
         Returns:
             2D list with specified dimensions and values
         """
-        raise NotImplementedError("Implement create_matrix")
+        return [[value]*cols]*rows
     
     def matrix_sum(self, matrix: List[List[int]]) -> int:
         """
@@ -262,7 +284,10 @@ class ListArrayExercises:
         Returns:
             Sum of all elements
         """
-        raise NotImplementedError("Implement matrix_sum")
+        arr_sum=0
+        for row in matrix:
+            arr_sum+=sum(row)
+        return arr_sum
     
     def find_second_largest(self, lst: List[int]) -> Optional[int]:
         """
@@ -303,7 +328,12 @@ class ListArrayExercises:
         Returns:
             List of common elements (no duplicates)
         """
-        raise NotImplementedError("Implement find_intersection")
+        com_el_set=()
+        for el in list1:
+            if el in list2:
+                com_el_set.add(el)
+        return list(com_el_set)
+
     
     def list_comprehension_example(self, lst: List[int]) -> List[int]:
         """
@@ -320,7 +350,7 @@ class ListArrayExercises:
         Returns:
             List of squares of even numbers
         """
-        raise NotImplementedError("Implement list_comprehension_example")
+        return [x**2 for x in lst if x%2==0]
     
     def nested_list_flatten(self, nested_list: List[List[int]]) -> List[int]:
         """
@@ -337,7 +367,10 @@ class ListArrayExercises:
         Returns:
             Flattened 1D list
         """
-        raise NotImplementedError("Implement nested_list_flatten")
+        out_lst=[]
+        for row in nested_list:
+            out_lst+=row
+        return out_lst
     
     def zip_lists(self, list1: List[int], list2: List[int]) -> List[tuple]:
         """
@@ -357,7 +390,7 @@ class ListArrayExercises:
         Returns:
             List of tuples pairing elements from both lists
         """
-        raise NotImplementedError("Implement zip_lists")
+        return list(zip(list1, list2))
     
     def enumerate_list(self, lst: List[str]) -> List[tuple]:
         """
@@ -374,7 +407,8 @@ class ListArrayExercises:
         Returns:
             List of (index, value) tuples
         """
-        raise NotImplementedError("Implement enumerate_list")
+        
+        return list((i, el) for i, el in enumerate(lst))
 
 
 def main():
