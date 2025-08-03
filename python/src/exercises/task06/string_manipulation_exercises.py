@@ -49,7 +49,9 @@ class StringManipulationExercises:
         Returns:
             Length of the string, 0 if None
         """
-        raise NotImplementedError("Implement get_string_length")
+        if text is not None:
+            return len(text)
+        return 0
 
     def to_upper_case(self, text: Optional[str]) -> Optional[str]:
         """
@@ -71,7 +73,9 @@ class StringManipulationExercises:
         Returns:
             Uppercase version of the string
         """
-        raise NotImplementedError("Implement to_upper_case")
+        if text is not None:
+            return text.upper()
+        return None
 
     def to_lower_case(self, text: Optional[str]) -> Optional[str]:
         """
@@ -93,7 +97,9 @@ class StringManipulationExercises:
         Returns:
             Lowercase version of the string
         """
-        raise NotImplementedError("Implement to_lower_case")
+        if text is not None:
+            return text.lower()
+        return None
 
     def contains_substring(self, text: Optional[str], substring: Optional[str]) -> bool:
         """
@@ -118,7 +124,11 @@ class StringManipulationExercises:
         Returns:
             True if substring is found, False otherwise
         """
-        raise NotImplementedError("Implement contains_substring")
+        if text is not None and substring is not None:
+            if substring in text:
+                return True
+            return False
+        return False
 
     def get_substring(self, text: Optional[str], start: int, end: int) -> Optional[str]:
         """
@@ -144,7 +154,11 @@ class StringManipulationExercises:
         Returns:
             Substring from start to end
         """
-        raise NotImplementedError("Implement get_substring")
+        if text is None:
+            return None
+        if start<0:
+            start=0
+        return text[start:end]
 
     def replace_char(self, text: Optional[str], old_char: str, new_char: str) -> Optional[str]:
         """
@@ -168,7 +182,15 @@ class StringManipulationExercises:
         Returns:
             String with characters replaced
         """
-        raise NotImplementedError("Implement replace_char")
+        if text is None:
+            return None
+        new_str=''
+        for letter in text:
+            if letter==old_char:
+                new_str+=new_char
+            else:
+                new_str+=letter
+        return new_str
 
     def replace_substring(self, text: Optional[str], old_substring: str, new_substring: str) -> Optional[str]:
         """
@@ -192,7 +214,11 @@ class StringManipulationExercises:
         Returns:
             String with substrings replaced
         """
-        raise NotImplementedError("Implement replace_substring")
+        if text is None:
+            return None
+        if old_substring in text:
+            text=text.replace(old_substring, new_substring)
+        return text
 
     def split_string(self, text: Optional[str], delimiter: str) -> Optional[List[str]]:
         """
@@ -217,7 +243,9 @@ class StringManipulationExercises:
         Returns:
             List of split strings
         """
-        raise NotImplementedError("Implement split_string")
+        if text is None:
+            return None
+        return text.split(delimiter)
 
     def join_strings(self, strings: Optional[List[str]], separator: str) -> Optional[str]:
         """
@@ -243,7 +271,13 @@ class StringManipulationExercises:
         Returns:
             Joined string
         """
-        raise NotImplementedError("Implement join_strings")
+        if strings is None:
+            return None
+        if strings==[]:
+            return ""
+        if len(strings)==1:
+            return strings[0]
+        return separator.join(strings)
 
     def trim_string(self, text: Optional[str]) -> Optional[str]:
         """
@@ -267,7 +301,9 @@ class StringManipulationExercises:
         Returns:
             Trimmed string
         """
-        raise NotImplementedError("Implement trim_string")
+        if text is None:
+            return None
+        return text.strip()
 
     def is_empty_or_whitespace(self, text: Optional[str]) -> bool:
         """
@@ -293,7 +329,9 @@ class StringManipulationExercises:
         Returns:
             True if string is None, empty, or whitespace only
         """
-        raise NotImplementedError("Implement is_empty_or_whitespace")
+        if text.strip() is None or text=="":
+            return True
+        return False
 
     def count_occurrences(self, text: Optional[str], char: str) -> int:
         """
@@ -318,7 +356,13 @@ class StringManipulationExercises:
         Returns:
             Number of occurrences of the character
         """
-        raise NotImplementedError("Implement count_occurrences")
+        if text is None:
+            return 0
+        count=0
+        for letter in text:
+            if letter==char:
+                count+=1
+        return count
 
     def reverse_string(self, text: Optional[str]) -> Optional[str]:
         """
@@ -367,7 +411,13 @@ class StringManipulationExercises:
         Returns:
             True if string is a palindrome
         """
-        raise NotImplementedError("Implement is_palindrome")
+        if text is None:
+            return None
+        i=0
+        while i<len(text)//2:
+            if text[i]!=text[-i-1]:
+                return False
+        return True
 
     def capitalize_words(self, text: Optional[str]) -> Optional[str]:
         """
